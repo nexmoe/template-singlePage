@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mixcm Avatar</title>
+    <meta charset="utf-8">
+    <meta name="description" content="用于对公共头像源的缓存加速，目前支持 QQ 头像与 Gravatar">
+    <meta name="keywords" content="Mixcm">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style type="text/css">
+    
+        /* link:https://i.chainwon.com/1105.html */
+        
+        body {
+            margin: 0;
+        }
+
+        .mixcm-container {
+            width: 700px;
+            margin: auto;
+            font-family: "SF Pro SC", "SF Pro Display", "SF Pro Icons", "AOS Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+
+        .mixcm-container .mixcm-info {
+            width: 100vw;
+            margin-left: calc(350px - 50vw);
+            padding: 50px calc(50vw - 350px);
+            background-color: #f8f9fa;
+            box-sizing: border-box;
+            color: #454d5d;
+        }
+
+        .mixcm-container .mixcm-version {
+            overflow: hidden;
+            padding: 10px;
+            margin: -10px;
+        }
+
+        .mixcm-container .mixcm-version h4,
+        .mixcm-container .mixcm-version ul,
+        .mixcm-container .mixcm-version li {
+            color: #454d5d;
+        }
+
+        .mixcm-container .mixcm-version ul {
+            margin-left: 10px;
+        }
+
+        .mixcm-container h2 {
+            margin: 0;
+            font-size: 2.4em;
+            position: relative;
+            color: #454d5d;
+        }
+
+        .mixcm-container h2::after {
+            content: "2.0";
+            position: absolute;
+            top: -3px;
+            font-size: 16px;
+            color: #fff;
+            border-radius: 15px;
+            padding: 2px 8px;
+            background-color: #5755d9;
+        }
+
+        .mixcm-container h4 {
+            font-size: 1.2em;
+            position: relative;
+        }
+
+        .mixcm-container h4::before {
+            content: "";
+            width: 14px;
+            height: 14px;
+            background: #5755d9;
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: -4px;
+            margin-right: 11px;
+            border-radius: 100%;
+            border: 3px solid #fff;
+            box-shadow: 0 0 5px #b0b0b0;
+        }
+
+        .mixcm-container h4::after {
+            content: "";
+            height: 100vh;
+            width: 2px;
+            background: #5755d9;
+            position: absolute;
+            left: 9px;
+            top: 6px;
+        }
+
+        .mixcm-container p {
+            color: #acb3c2;
+        }
+
+        .mixcm-container a,
+        .mixcm-container a:hover,
+        .mixcm-container a:active {
+            text-decoration: none;
+            color: #5755d9;
+        }
+
+        .mixcm-container .mixcm-info a::after {
+            content: ">";
+            margin-left: 5px;
+            display: inline-block;
+            font-family: cursive;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mixcm-container">
+        <div class="mixcm-info">
+            <h2>Mixcm Avatar</h2>
+            <p>Still under development, unstable.</p>
+            <a href="https://blog.lim-light.com/archives/mixcm-avatar-cache-doc.html" target="_blank">阅读使用文档</a>&nbsp;&nbsp;&nbsp;
+            <a href="https://i.chainwon.com/" target="_blank">折影轻梦</a>
+        </div>
+        <div class="mixcm-version">
+            <h4>2018.3.5</h4>
+            <ul>
+                <li> 重构了缓存逻辑，发布 2.0.0 Beta</li>
+                <li> 目前使用 CF，最近可能有点炸，经常换服务器 / 机房 </li>
+            </ul>
+            <h4>2018.2.20</h4>
+            <ul>
+                <li> 迁移至香港 Sunnyvision 数据中心（由
+                    <a href="https://233i.me/">@我爱雪碧 </a> 赞助）</li>
+                <li>Gravatar 从
+                    <code>secure.gravatar.com</code> 获取 </li>
+            </ul>
+            <h4>2018.2.9</h4>
+            <ul>
+                <li> 将证书更换为
+                    <code>AlwaysOnSSL TLS RSA CA G1</code>
+                </li>
+            </ul>
+            <h4>2017.12.31</h4>
+            <ul>
+                <li> 从一个镜像服务器更新 Gravatar</li>
+                <li> 新年快乐！</li>
+            </ul>
+            <h4>2017.11.19</h4>
+            <ul>
+                <li> 再次修复一个潜在的缓存问题 </li>
+            </ul>
+            <h4>2017.11.18</h4>
+            <ul>
+                <li> 修复了一个缓存的问题 </li>
+                <li> 启用 Opcache</li>
+                <li> 现在会对 Etag 返回 304 了 </li>
+            </ul>
+            <h4>2017.11.11</h4>
+            <ul>
+                <li> 完美解决一个异步问题
+                    <code>fastcgi_finish_request()</code>
+                </li>
+                <li> 错误修正和性能改进 </li>
+            </ul>
+            <h4>2017.10.29</h4>
+            <ul>
+                <li> 支持参数
+                    <code>d</code>，示例 https://avatar.mixcm.cn/gravatar/fd303d9c4f8952430edcfa6308edca6c?s=52&amp;d=identicon</li>
+                <li> 为了方便部分使用替换域名实现的用户（比如我），额外支持了以下方式： https://avatar.mixcm.cn/gravatar/dis{$d}/{$mailmd5}?s={$size}</li>
+                <li> 更好的异步更新策略 </li>
+                <li> 依然不支持
+                    <code>r</code> 参数，如有需要，请在此回复 </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
