@@ -6,7 +6,7 @@ MIT
 
 
 ## Nexmoe-Safari
-一个为组织项目写的时间轴模板
+一个低仿 Mac OS Safari 的单页模板
 
 #### 演示
 - https://nexmoe.github.io/single-page/nexmoe-safari/
