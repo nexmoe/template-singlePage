@@ -19,7 +19,7 @@ MIT
 
 #### 演示
 - https://avatar.mixcm.cn/
-- https://nexmoe.github.io/single-page/mixcm-avatar/
+- https://github.nexmoe.com/single-page/mixcm-avatar/
 
 #### 预览图
 ![mixcm-avatar](/cover/2738569080.png)
