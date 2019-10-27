@@ -12,7 +12,7 @@ MIT
 - https://nexmoe.github.io/single-page/nexmoe-safari/
 
 #### 预览图
-![nexmoe-safari](https://nexmoe.github.io/single-page/cover/2018-04-20_23-06-59.png)
+![nexmoe-safari](/cover/2018-04-20_23-06-59.png)
 
 ## Mixcm-Avatar
 一个为组织项目写的时间轴模板
@@ -22,7 +22,7 @@ MIT
 - https://nexmoe.github.io/single-page/mixcm-avatar/
 
 #### 预览图
-![mixcm-avatar](https://nexmoe.github.io/single-page/cover/2738569080.png)
+![mixcm-avatar](/cover/2738569080.png)
 
 ## Nexmoe-Warning
 
@@ -30,4 +30,4 @@ MIT
 - https://nexmoe.github.io/single-page/nexmoe-warning/
 
 #### 预览图
-![mixcm-avatar](https://nexmoe.github.io/single-page/cover/59f545cd0b244.png)
+![mixcm-avatar](/cover/59f545cd0b244.png)
